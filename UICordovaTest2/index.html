@@ -6,14 +6,64 @@
 
     <!-- UICordovaTest2 references -->
     <link href="css/index.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet"  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/perchouli/ixedit/master/ixedit.js"></script>-->
+    <script type="text/javascript"  src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <!--<link href="http://rawgit.com/perchouli/ixedit/master/ixedit.css" rel="stylesheet">-->
+
+    <script type="text/javascript">
+        $(function () {
+            $('input[id="Button1"]').button();
+            $('.radios').buttonset();
+        });
+    </script>
+
+    <style type="text/css">
+        #Radio3 {
+            width: 20px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        if (window.ixedit) { ixedit.deployed = true };
+        if (window.jQuery) {
+            jQuery(function () {
+                (function () { jQuery('input#Button1').on('click', function (event, ui) { if (jQuery('input[name="R1"]:checked').val() == 'A') { setTimeout(function () { window.alert('Youve chosen A') }, 0) } }); })();
+                (function () { jQuery('input#Button1').on('click', function (event, ui) { if (jQuery('input[name="R1"]:checked').val() == 'B') { setTimeout(function () { window.alert('Youve chose B') }, 0) } }); })();
+                (function () { jQuery('input#Button1').on('click', function (event, ui) { if (jQuery('input[name="R1"]:checked').val() == 'C') { setTimeout(function () { window.alert('Youve chosen C') }, 0) } }); })();
+            })
+        };
+    </script>
+
 </head>
 <body>
     <p>Hello, your application is ready!</p>
+
+    <div>
+        
+        <input id="Button1" type="button" value="button" />
+
+    </div>
+
+    <hr />
+
+    <div class="radios">
+
+        <input id="Radio1" name="R1" type="radio" value="A" checked/><label for="Radio1">Choice A</label>
+        <input id="Radio2" name="R1" type="radio" value="B" /><label for="Radio2">Choice B</label>
+        <input id="Radio3" name="R1" type="radio" value="C" /><label for="Radio3">Choice C</label>
+
+    </div>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
 
     <script src="scripts/index.js"></script>
+    
 </body>
 </html>
