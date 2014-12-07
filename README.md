@@ -1,0 +1,4 @@
+UICordovaTest2
+==============
+
+None
